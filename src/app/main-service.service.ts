@@ -23,7 +23,7 @@ export class MainServiceService {
   }
 
   public addCareer( career : any, callback : any){
-    // console.log(career);
+    console.log(career);
     this.httpClient.post("http://159.89.164.226:5050/ajes/careers",career)
                   .subscribe((data : any)=>{
                     callback(data);
@@ -31,7 +31,7 @@ export class MainServiceService {
   }
 
  public addDemo( demo : any, callback : any){
-  // console.log(demo);
+  console.log(demo);
   this.httpClient.post("http://159.89.164.226:5050/ajes/demo",demo)
                   .subscribe((data : any)=>{
                     callback(data);
