@@ -1,0 +1,21 @@
+.example-container {
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  width: 50%;
+  background-color: rgb(249, 249, 249);
+  margin-top: 5%;
+  margin-left: 27%;
+  border: 2px solid rgb(28, 28, 28);
+  box-shadow: 5px 5px 8px 8px rgb(180, 180, 180);
+  }
+  
+  .mat-table {
+    overflow: auto;
+    /* max-height: 500px; */
+    width: 300px;
+    height: auto;
+ 
+    
+  }
+

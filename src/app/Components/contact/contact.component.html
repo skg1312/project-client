@@ -1,0 +1,74 @@
+<div class="container-fluid">
+
+	<div class="heading" style="background-image:linear-gradient(to bottom left, white,rgb(214, 214, 251));">
+		<h1>
+			<span><b>Contact Us</b></span>
+			<span>
+				<h5>Get in touch with us today to discuss your software development and maintainance needs.
+					Let's work together to innovate for tomorrow and drive your business towards success.
+				</h5>
+			</span>
+		</h1>
+	</div>
+</div>
+
+
+
+
+<br><br>
+
+
+<div class="form">
+	<form [formGroup]="addContactForm">
+		<div class="name">
+			<br>
+			<mat-form-field>
+				<mat-label>Name</mat-label>
+				<input matInput style="height: 50px;" formControlName="name" placeholder="" [(ngModel)]="contact.name"
+					required>
+				<mat-error *ngIf="checkError('name','required')">You must enter a value</mat-error>
+			</mat-form-field>
+		</div>
+
+		<div class="phone">
+			<mat-form-field>
+				<mat-label>Phone Number</mat-label>
+				<input matInput style="height: 50px;" formControlName="phoneNumber" placeholder=""
+					[(ngModel)]="contact.phoneNumber" required>
+				<mat-error *ngIf="checkError('phoneNumber','required')">You must enter a value</mat-error>
+				<mat-error *ngIf="checkError('phoneNumber','pattern')">Invalid phone number format. Please enter only
+					digits.</mat-error>
+
+			</mat-form-field>
+		</div>
+
+
+		<div class="email">
+			<mat-form-field>
+				<mat-label>Email</mat-label>
+				<input matInput style="height: 50px;" formControlName="email" placeholder="VM@example.com"
+					[(ngModel)]="contact.email" required email>
+				<mat-error *ngIf="checkError('email','required')">You must enter a value</mat-error>
+				<!-- <mat-error *ngIf="checkError('email','email')">Invalid Email </mat-error> -->
+				<mat-error *ngIf="checkError('email','customDomainCheck')">Invalid Email </mat-error>
+			</mat-form-field>
+		</div>
+
+
+		<div class="description">
+			<mat-form-field>
+				<mat-label>Description</mat-label>
+				<input matInput style="height: 50px;" formControlName="description" placeholder=""
+					[(ngModel)]="contact.description">
+				<mat-error *ngIf="checkError('description','required')">You must enter a value</mat-error>
+			</mat-form-field>
+		</div>
+
+
+		<button class="button-7" [disabled]="addContactForm.invalid" (click)="addContact()">Submit</button>
+	</form>
+
+
+
+
+</div>

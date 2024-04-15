@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/images/aj logo.webp" class="logo" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="toggleCollapse()" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-lg-end" [ngClass]="{'show': isCollapsed}" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" (click)="toggleCollapse()" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" (click)="toggleCollapse()" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/services" (click)="toggleCollapse()" routerLinkActive="active">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products"  (click)="toggleCollapse()" routerLinkActive="active">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/careers" (click)="toggleCollapse()" routerLinkActive="active">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" (click)="toggleCollapse()" routerLinkActive="active">Contact</a>
+        </li>
+        <li class="nav-item" *ngIf="allow">
+          <a class="nav-link" routerLink="/login" (click)="toggleCollapse()" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="allow1">
+          <a class="nav-link" routerLink="/resumes" (click)="toggleCollapse()" routerLinkActive="active">Resumes</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="/table" (click)="toggleCollapse()" routerLinkActive="active">Enquiries</a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="toggleCollapse()" *ngIf="allow1" (click)="addEnquiry()">Enquiries</button>
+    </div>
+  </div>
+</nav>

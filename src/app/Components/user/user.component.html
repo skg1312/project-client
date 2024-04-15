@@ -1,0 +1,22 @@
+<div class="form" style="margin-top: 15%;">
+    
+    <div class="name">
+      <h2 style="margin-left: 25%;"><b>User</b></h2>
+      <br>
+      <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput   #uid style="height: 50px;" placeholder="" [(ngModel)]="user.email" required>
+      <!-- <mat-error *ngIf="userName.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+    </div>
+    
+    <div class="phone">
+      <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput #pwd style="height: 50px;" placeholder="" [(ngModel)]="user.passWord" required >
+      <!-- <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+    </div>
+    
+    <button class="button-7" (click)="onSubmit()"  >Submit</button>
+    </div>

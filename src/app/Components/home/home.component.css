@@ -1,0 +1,33 @@
+
+.container-fluid{
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+
+.parts{
+  min-height: 100vh;
+}
+
+
+.parts {
+  opacity: 0;
+}
+
+.parts.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width:600px){
+  .wrapper {
+width: 100%;
+}
+}
+
+@media (max-width: 768px) {
+  img {
+      height: auto;
+      width: 100%;
+  }
+}

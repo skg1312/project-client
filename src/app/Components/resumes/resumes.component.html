@@ -1,0 +1,49 @@
+ <br><br><br>
+
+
+
+
+
+
+
+
+
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="ELEMENT_DATA">
+  
+      <ng-container matColumnDef="Slno">
+        <mat-header-cell *matHeaderCellDef> <b>Slno.</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.careerId}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef> <b> Name</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="Email">
+        <mat-header-cell *matHeaderCellDef> <b> Email </b> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="Phone No">
+        <mat-header-cell *matHeaderCellDef> <b> Phone Number </b></mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.phoneNumber}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <mat-header-cell *matHeaderCellDef > <b> Download </b></mat-header-cell>
+        <mat-cell *matCellDef="let element" > <i class="fa fa-download" aria-hidden="true"  (click)="getFile(element.careerId)"></i></mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+    <mat-paginator #paginator
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   [showFirstLastButtons]="true">
+    </mat-paginator>
+  </div>
+  

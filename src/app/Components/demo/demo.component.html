@@ -1,0 +1,39 @@
+
+<div class="form" style="margin-top: 10%;">
+    <div class="name">
+      <h2 style="margin-left: 14%;"><b>Book A Demo Today</b></h2>
+      <br>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput style="height: 50px;" placeholder="" [(ngModel)]="demo.name" required>
+        <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    
+    <div class="phone">
+      <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input matInput style="height: 50px;" placeholder="" [(ngModel)]="demo.phoneNumber" required >
+        <mat-error *ngIf="phone.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    
+
+    <div class="email">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput style="height: 50px;"s placeholder="VM@example.com" [(ngModel)]="demo.email" required>
+        <mat-error  *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <div class="description">
+        <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput style="height: 50px;" placeholder="" disabled [(ngModel)]="demo.description" >
+        </mat-form-field>
+      </div>
+
+
+      <button class="button-7" (click)="addDemo()">Submit</button>

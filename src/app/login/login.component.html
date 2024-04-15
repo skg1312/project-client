@@ -1,0 +1,49 @@
+<!-- <div class="content">
+    <div class="login-box">
+      <h2><b>Login</b></h2>
+      <div class="form">
+        <div class="user-box">
+          <input type="text"
+          #uid name="" [(ngModel)]="login.userName" required="">
+          <label><Nav></Nav>Name*</label>
+        </div>
+        <div class="user-box">
+          <input type="password" 
+          #pwd
+          name="" [(ngModel)]="login.password" required="">
+          <label>Password*</label>
+        </div>
+        <a (click)="onLogin(uid.value,pwd.value)">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </a>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="form" style="margin-top: 15%;">
+    <div class="name">
+      <h2 style="margin-left: 25%;"><b>Login</b></h2>
+      <br>
+      <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput   #uid style="height: 50px;" placeholder="" [(ngModel)]="login.userName" required>
+      <mat-error *ngIf="userName.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    
+    <div class="phone">
+      <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput #pwd style="height: 50px;" placeholder="" [(ngModel)]="login.password" required >
+      <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <button class="button-7" (click)="onLogin(uid.value,pwd.value)" (click)="simpleAlert()">Submit</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="button-7" routerLink="/user">SignUp</button>
+    </div>

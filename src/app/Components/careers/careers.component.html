@@ -1,0 +1,67 @@
+
+<div class="container-fluid">
+
+  <div class="heading" style="background-image:linear-gradient(to bottom left, white,rgb(214, 214, 251));">
+    <h1>
+    <span><b>We're Hiring!</b></span>
+    <span>Join Our Team</span>
+    <span>Java, .Net, Android Developer, ReactJs</span>
+    <span>
+    <h5>If you're interested in one of our open positions as S/W Engineer, Team Leader, System  Architect. 
+      Start by applying here and attaching your resume.</h5>
+    </span>
+   </h1>
+  </div>
+</div>
+<br>
+    <div class="form">
+      <div class="name">
+        <h2 style="margin-left: 25%;"><b>Apply Now</b></h2>
+        <br>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput style="height: 50px;" placeholder="" [(ngModel)]="career.name" required>
+          <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      
+      <div class="phone">
+        <mat-form-field>
+          <mat-label>Phone Number</mat-label>
+          <input matInput style="height: 50px;" placeholder="" [(ngModel)]="career.phoneNumber" required >
+          <mat-error *ngIf="phone.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      
+  
+      <div class="email">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput style="height: 50px;"s placeholder="VM@example.com" [(ngModel)]="career.email" required>
+          <mat-error  *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+        
+
+      <form (ngSubmit)="imageUpload()">
+        <h5>Attach Your Resume</h5>
+
+        <div class="d-flex">
+          <input type="file" #fileInput  class="form-control" (change)="onFileSelected($event)">
+          <button class="button-7" type="submit">Upload File</button>
+        </div>
+        
+      </form>
+      <div *ngIf="isUploaded">
+        Upload successful!
+      </div>
+
+      <br>
+      <button class="button-7" [disabled]="!areAllFieldsFilled()"    (click)="addCareer()">Submit</button>
+
+
+
+
+  
+    </div>
+ 
