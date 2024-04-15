@@ -12,10 +12,10 @@ export class MainServiceService {
   constructor(private httpClient : HttpClient, private snackBar : MatSnackBar) {
 
   }
-  baseURL:string="http://localhost:5050/ajes/"
+  baseURL:string="http://159.89.164.226:5050/ajes/"
 
   public addContact( contact : any, callback : any ){
-    this.httpClient.post("http://localhost:5050/ajes/contact",contact)
+    this.httpClient.post("http://159.89.164.226:5050/ajes/contact",contact)
                   .subscribe((data:any)=>{
                       callback(data);
                   }
@@ -24,7 +24,7 @@ export class MainServiceService {
 
   public addCareer( career : any, callback : any){
     // console.log(career);
-    this.httpClient.post("http://localhost:5050/ajes/careers",career)
+    this.httpClient.post("http://159.89.164.226:5050/ajes/careers",career)
                   .subscribe((data : any)=>{
                     callback(data);
                   })
@@ -32,14 +32,14 @@ export class MainServiceService {
 
  public addDemo( demo : any, callback : any){
   // console.log(demo);
-  this.httpClient.post("http://localhost:5050/ajes/demo",demo)
+  this.httpClient.post("http://159.89.164.226:5050/ajes/demo",demo)
                   .subscribe((data : any)=>{
                     callback(data);
                   })
  }
 
   public addLogin( login : any, callback : any ){
-    this.httpClient.post("http://localhost:5050/ajes/contact",login)
+    this.httpClient.post("http://159.89.164.226:5050/ajes/contact",login)
                   .subscribe((data:any)=>{
                       callback(data);
                   }
@@ -49,7 +49,7 @@ export class MainServiceService {
 
   public logIn(login : any,callback : any){
     console.log(login);
-    this.httpClient.post("http://localhost:5050/ajes/logging1",login)
+    this.httpClient.post("http://159.89.164.226:5050/ajes/logging1",login)
                     .subscribe(
                       (data: any) => {
                         callback(data);
