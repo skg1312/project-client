@@ -15,7 +15,7 @@ export class MainServiceService {
   baseURL:string="http://159.89.164.226:5000"
 
   public addContact( contact : any, callback : any ){
-    this.httpClient.post("http://159.89.164.226:5000/ajes/contact",contact)
+    this.httpClient.post("http://159.89.164.226:5050/ajes/contact",contact)
                   .subscribe((data:any)=>{
                       callback(data);
                   }
