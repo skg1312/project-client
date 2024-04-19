@@ -12,7 +12,7 @@ export class MainServiceService {
   constructor(private httpClient : HttpClient, private snackBar : MatSnackBar) {
 
   }
-  baseURL:string="http://159.89.164.226:5000"
+  baseURL:string="http://159.89.164.226:5050"
 
   public addContact( contact : any, callback : any ){
     this.httpClient.post("http://159.89.164.226:5050/ajes/contact",contact)
@@ -39,7 +39,7 @@ export class MainServiceService {
  }
 
   public addLogin( login : any, callback : any ){
-    this.httpClient.post("http://159.89.164.226:5050/ajes/contact",login)
+    this.httpClient.post("http://159.89.164.226:5050/ajes/login",login)
                   .subscribe((data:any)=>{
                       callback(data);
                   }
