@@ -12,10 +12,10 @@ export class MainServiceService {
   constructor(private httpClient : HttpClient, private snackBar : MatSnackBar) {
 
   }
-  baseURL:string="http://159.89.164.226:5050/ajes/"
+  baseURL:string="http://159.89.164.226"
 
   public addContact( contact : any, callback : any ){
-    this.httpClient.post("http://159.89.164.226:5050/ajes/contact",contact)
+    this.httpClient.post("http://159.89.164.226/contact",contact)
                   .subscribe((data:any)=>{
                       callback(data);
                   }
