@@ -107,7 +107,7 @@ private openErrorSnackBar(message: string): void {
 
 
  public getUserByUserName(userName : any,callback : any){
-     this.httpClient.get("http://localhost:5050/ajes/user"+userName)
+     this.httpClient.get("http://159.89.164.226:5050/ajes/user"+userName)
                     .subscribe((data : any)=>{
                        console.log(data);
                        callback(data);
