@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class MainService {
-  baseUri: string = 'http://159.89.164.226:5050/ajse';
+  baseUri: string = 'https://167.71.225.230/ajse';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -520,17 +520,17 @@ export class MainService {
 
   // End of User
 
-  baseUri1: string = 'http://159.89.164.226:5050/Visitor';
-  baseUri2: string = 'http://159.89.164.226:5050/Appointment';
-  baseUri3: string = 'http://159.89.164.226:5050/Section';
-  baseUri4: string = 'http://159.89.164.226:5050/Facility';
-  baseUri5: string = 'http://159.89.164.226:5050/Vehicle';
-  baseUri6: string = 'http://159.89.164.226:5050/User/Userexist/';
-  baseUri7: string = 'http://159.89.164.226:5050/Item';
-  baseUri8: string = 'http://159.89.164.226:5050/User';
-  baseUri9 : string = "http://159.89.164.226:5050" ;
-  baseUri10 : string ="http://159.89.164.226:5050/SectionVisited";
-  baseUri11 : string = "http://159.89.164.226:5050/FacilityVisited";
+  baseUri1: string = 'https://167.71.225.230/Visitor';
+  baseUri2: string = 'https://167.71.225.230/Appointment';
+  baseUri3: string = 'https://167.71.225.230/Section';
+  baseUri4: string = 'https://167.71.225.230/Facility';
+  baseUri5: string = 'https://167.71.225.230/Vehicle';
+  baseUri6: string = 'https://167.71.225.230/User/Userexist/';
+  baseUri7: string = 'https://167.71.225.230/Item';
+  baseUri8: string = 'https://167.71.225.230/User';
+  baseUri9 : string = "https://167.71.225.230" ;
+  baseUri10 : string ="https://167.71.225.230/SectionVisited";
+  baseUri11 : string = "https://167.71.225.230/FacilityVisited";
 
     public addVisitor(Visitor: any,callback:any) {
       this.httpClient.post(this.baseUri1,Visitor)
@@ -649,7 +649,7 @@ export class MainService {
     })
   }
 
-  baseUri20: string = 'http://159.89.164.226:5050';
+  baseUri20: string = 'https://167.71.225.230';
   message: string = '';
 
   //  Complete company
@@ -698,7 +698,7 @@ export class MainService {
   getImage(appointment_id : any): Observable<any> {
     const headers = new HttpHeaders(); // Add any required headers here
 
-    return this.httpClient.get("http://159.89.164.226:5050/qr/qrcode/"+appointment_id, { headers, responseType: 'blob' }).pipe(
+    return this.httpClient.get("https://167.71.225.230/qr/qrcode/"+appointment_id, { headers, responseType: 'blob' }).pipe(
       map((response: Blob) => {
         // Process the response if needed (e.g., convert to base64)
         // You can also extract headers from the response using response.headers
@@ -711,11 +711,11 @@ export class MainService {
     const formData = new FormData();
     formData.append('pdfFile', pdfBlob, 'pdf_filename.pdf');
 
-    return this.httpClient.post<any>('http://159.89.164.226:5050/ajes/upload-pdf/'+visitor_id, formData);
+    return this.httpClient.post<any>('https://167.71.225.230/ajes/upload-pdf/'+visitor_id, formData);
   }
 
   downloadPdf(pdfUrl: string): Observable<Blob> {
-    return this.httpClient.get("http://159.89.164.226:5050/ajes/downloadImage/"+pdfUrl, { responseType: 'blob' });
+    return this.httpClient.get("https://167.71.225.230/ajes/downloadImage/"+pdfUrl, { responseType: 'blob' });
   }
 
   
