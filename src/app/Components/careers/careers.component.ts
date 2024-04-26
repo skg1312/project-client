@@ -136,7 +136,7 @@ export class CareersComponent  implements AfterViewInit {
     formData.append('file', this.selectedfile);
 
 
-    this.httpClient.post<any>('http://159.89.164.226:5050/ajes/upload', formData)
+    this.httpClient.post<any>('https://167.71.225.230/ajes/upload', formData)
              .subscribe(
                       (response) => {
                         this.image = response;
