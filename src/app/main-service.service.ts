@@ -12,10 +12,10 @@ export class MainServiceService {
   constructor(private httpClient : HttpClient, private snackBar : MatSnackBar) {
 
   }
-  baseURL:string="https://167.71.225.230"
+  baseURL:string="https://saiku.codes"
 
   public addContact( contact : any, callback : any ){
-    this.httpClient.post("https://167.71.225.230/ajes/contact",contact)
+    this.httpClient.post("https://saiku.codes/ajes/contact",contact)
                   .subscribe((data:any)=>{
                       callback(data);
                   }
@@ -24,7 +24,7 @@ export class MainServiceService {
 
   public addCareer( career : any, callback : any){
     console.log(career);
-    this.httpClient.post("https://167.71.225.230/ajes/careers",career)
+    this.httpClient.post("https://saiku.codes/ajes/careers",career)
                   .subscribe((data : any)=>{
                     callback(data);
                   })
@@ -32,14 +32,14 @@ export class MainServiceService {
 
  public addDemo( demo : any, callback : any){
   console.log(demo);
-  this.httpClient.post("https://167.71.225.230/ajes/demo",demo)
+  this.httpClient.post("https://saiku.codes/ajes/demo",demo)
                   .subscribe((data : any)=>{
                     callback(data);
                   })
  }
 
   public addLogin( login : any, callback : any ){
-    this.httpClient.post("https://167.71.225.230/ajes/login",login)
+    this.httpClient.post("https://saiku.codes/ajes/login",login)
                   .subscribe((data:any)=>{
                       callback(data);
                   }
@@ -49,7 +49,7 @@ export class MainServiceService {
 
   public logIn(login : any,callback : any){
     console.log(login);
-    this.httpClient.post("https://167.71.225.230/ajes/logging1",login)
+    this.httpClient.post("https://saiku.codes/ajes/logging1",login)
                     .subscribe(
                       (data: any) => {
                         callback(data);
@@ -107,7 +107,7 @@ private openErrorSnackBar(message: string): void {
 
 
  public getUserByUserName(userName : any,callback : any){
-     this.httpClient.get("https://167.71.225.230/ajes/user"+userName)
+     this.httpClient.get("https://saiku.codes/ajes/user"+userName)
                     .subscribe((data : any)=>{
                        console.log(data);
                        callback(data);
